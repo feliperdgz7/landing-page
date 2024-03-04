@@ -1,5 +1,18 @@
 document.addEventListener('DOMContentLoaded', function(){
     const buttons = document.querySelectorAll('[data-tab-button]');
+    const heroSection = document.querySelector('.hero');
+    const heightHero = heroSection.clientHeight;
+
+    //Header
+    window.addEventListener('scroll', function(){
+        const positionCurrent = window.scrollY;
+
+        if(positionCurrent < heightHero){
+            hideHeaderElements();
+        }else{
+            displayHeaderElements();
+        }
+    })
 
 
         //Section attractions, tab programming
@@ -30,4 +43,16 @@ function hideAllTab(){
     for(let i = 0; i < tabsContainer.length; i++){
         tabsContainer[i].classList.remove('shows__list--is-active');
     }
+}
+
+//Hide Element Header
+function hideHeaderElements(){
+    const header = document.querySelector('header');
+    header.classList.add('header--is-hidden');
+}
+
+//Show Element Header
+function displayHeaderElements(){
+    const header = document.querySelector('header');
+    header.classList.remove('header--is-hidden');
 }

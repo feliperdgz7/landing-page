@@ -2,6 +2,7 @@
 @use 'hero';
 @use 'shows';
 @use 'footer';
+@use 'header';
 
 @font-face{
     font-family: Avenir;
@@ -59,4 +60,25 @@ body{
     text-decoration: none;
     text-transform: uppercase;
     cursor: pointer;
+
+    &--secundary{
+        background-color: variaveis.$corButton;
+        color: variaveis.$corTextPrimary;
+        border: 1px solid variaveis.$corButton;
+
+        &:hover{
+            background-color: lighten(variaveis.$corButton, 3%);
+        }
+    }
+    &--dark{
+        background-color: rgba(variaveis.$corBotaoDark, 0.8);
+        border-color: variaveis.$corTextPrimary;
+        color: variaveis.$corTextPrimary;
+        border: 1px solid variaveis.$corTextPrimary;
+
+        &:hover{
+            background-color: variaveis.$corTextPrimary;
+            color: variaveis.$corFundo;
+        }
+    }
 }
